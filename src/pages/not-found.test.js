@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-librarty/react';
+import { render, screen } from '@testing-library/react';
 import NotFound from './not-found';
 
 test('File Not Found 404', () => {
