@@ -27,7 +27,7 @@ const Register = () => {
       });
       
       try {
-        const response =  axios.post('http://localhost:9000/register', {
+        const response =  axios.post('https://modul17selvi-production.up.railway.app/register', {
           username: data.get('username'),
           email: data.get('email'),
           password: data.get('password')
