@@ -31,7 +31,7 @@ const Login = () => {
       // Tambahkan kode di bawah ini untuk mengambil data dari localstorage
       // 1. Lakukan Axios POST ke backend pada endpoint /login di bawah ini,
       // dengan parameter 'email' dan 'pass' yang didapat dari form (clue ada pada line 23 dan 24).
-      const response = await axios.post('http://localhost:9000/login', {
+      const response = await axios.post('https://modul17selvi-production.up.railway.app/login', {
         email: data.get('email'),
         password: data.get('password'),
       })
