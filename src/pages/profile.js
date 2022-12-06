@@ -49,8 +49,6 @@ const Profile = () => {
               token : token })
             if(response.status === 200){
               setIsLogin(true)
-            }else{
-              navigate('/login')
             }
             
           } catch (error) {
