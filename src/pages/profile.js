@@ -41,13 +41,12 @@ const Profile = () => {
     React.useEffect(() => {
       
         // 1. Ambil data user dari localstorage
-        
+        let token = localStorage.getItem('token')
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verify = async() =>{
           try {
             const response = await axios.post('https://modul17selvi-production.up.railway.app/verify', {
-              token: localStorage.getItem('token')
-            })
+              token : token })
             if(response.status === 200){
               setIsLogin(true)
             }else{
