@@ -83,10 +83,11 @@ const Profile = () => {
         // 2. Hit endpoint logout dengan body jwt yang didapat dari localstorage
         //   dan setelah berhasil, beri alert sukses
         await axios.post('https://modul17selvi-production.up.railway.app/logout', {
-            jwt: localStorage.getItem('token')
+            token: localStorage.getItem('token')
         })
         .then((res) => {
-            alert('Logout Success');
+          localStorage.removeItem('token')
+          alert('Logout Success');
         })
 
         // 3. Redirect ke halaman login, clue : window.location.href = "/"
