@@ -33,11 +33,10 @@ const Home = () => {
     // Modifikasi kode di bawah ini untuk mengambil data dari localstorage
     React.useEffect(() => {
         // 1. Ambil data 'user' dan 'token' dari localstorage
-        let id = localStorage.getItem('id')
         let token = localStorage.getItem('token')
 
         // 2. Lempar ke halaman login bila user atau token tidak ada
-        if(token=''||!token){
+        if(token===''||!token){
             return navigate('/login')
         }
         // 3. definisikan fungsi verifikasi token
@@ -50,7 +49,7 @@ const Home = () => {
                 const response = await axios.post('http://localhost:9000/verify', {
                 token: localStorage.getItem('token')
                 })
-                if(response.status == 200){
+                if(response.status === 200){
                 setIsLogin(true)
                 }else{
                 navigate('/login')
@@ -63,7 +62,7 @@ const Home = () => {
         }
         // 4. Panggil fungsi verifikasi token
         verify()
-    }, [])
+    })
 
     const handleToHome = () => {
         window.location.href = '/';

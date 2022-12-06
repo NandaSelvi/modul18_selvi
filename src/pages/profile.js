@@ -41,17 +41,14 @@ const Profile = () => {
     React.useEffect(() => {
       
         // 1. Ambil data user dari localstorage
-        let id = localStorage.getItem('id')
-        let name = localStorage.getItem('name')
-        let email = localStorage.getItem('email')
-        let token = localStorage.getItem('token')
+        
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verify = async() =>{
           try {
             const response = await axios.post('https://modul17selvi-production.up.railway.app/verify', {
               token: localStorage.getItem('token')
             })
-            if(response.status == 200){
+            if(response.status === 200){
               setIsLogin(true)
             }else{
               navigate('/login')
@@ -72,7 +69,7 @@ const Profile = () => {
           name: localStorage.getItem('name'),
           email: localStorage.getItem('email')
         }))
-    }, [])
+    },[user,navigate])
 
     const handleToHome = () => {
         window.location.href = '/';
