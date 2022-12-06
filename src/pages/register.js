@@ -25,11 +25,10 @@ const Register = () => {
         pass: data.get('password'),
         email: data.get('email'),
       });
-    }
-    
+      
       try {
-        const response = axios.post('http://localhost:3000/register', {
-          username:data.get('username'),
+        const response =  axios.post('http://localhost:9000/register', {
+          username: data.get('username'),
           email: data.get('email'),
           password: data.get('password')
         })
@@ -38,6 +37,7 @@ const Register = () => {
       } catch (error) {
         alert('Register Gagal!');
       }
+    }
       
 
     // Tambahkan kode di bawah ini untuk mengambil data dari localstorage
